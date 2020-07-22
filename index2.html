@@ -8,12 +8,12 @@
 	<body>
 		<div id="app">
 			<p>{{name}}</p>
-			<p k-text="name"></p>
+			<p v-text="name"></p>
 			<p>{{age}}</p>
 			<p>{{doubleAge}}</p>
-			<input type="text" k-model="name" />
+			<input type="text" v-model="name" />
 			<button @click="changeName">呵呵</button>
-			<div k-html="html"></div>
+			<div v-html="html"></div>
 		</div>
 		<script src="./compiler.js"></script>
 		<script src="./vue.js"></script>
@@ -38,6 +38,7 @@
 					},
 				},
 			});
+			app.name = "更新";
 		</script>
 	</body>
 </html>
