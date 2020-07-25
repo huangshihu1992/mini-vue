@@ -13,6 +13,9 @@ class Vue {
 
         // created
         this._options.created.call(this);
+
+        this.setMethod(this._options.methods);
+
     }
 
     observe(obj) {
@@ -55,6 +58,12 @@ class Vue {
             set(newVal) {
                 this._data[key] = newVal;
             }
+        })
+    }
+
+    setMethod(methods) {
+        Object.keys(methods).forEach(key => {
+            this[key] = methods[key];
         })
     }
 }
